@@ -1,0 +1,11 @@
+wifibot_node:
+  ros__parameters:
+    port: "/dev/ttyAMA0"
+    base_frame: "base_link"
+    odom_frame: "odom"
+    entrax: 0.30
+    relay1: true
+    relay2: true
+    relay3: true
+    battery_min_voltage: 10.5
+    battery_max_voltage: 12.1
