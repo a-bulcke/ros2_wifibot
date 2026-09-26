@@ -150,17 +150,24 @@ Fichier `/etc/sudoers.d/wifibot-shutdown` :
 ubuntu ALL=(ALL) NOPASSWD: /sbin/shutdown
 ```
 
-## 2. Copie des paquets (SCP)
+## 2. Récupération des paquets (git clone)
 
 ```bash
-scp -r ros2wifibot ybimu_ros2_driver ubuntu@wifibot.local:~/ros2_ws/src/
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+git clone https://github.com/<ton-compte>/<ton-depot>.git
 ```
 
+Ça crée `~/ros2_ws/src/<ton-depot>/ros2wifibot` et `.../ybimu_ros2_driver` — `colcon build`
+les trouve automatiquement (recherche récursive des `package.xml`), peu importe ce niveau de
+dossier supplémentaire.
+
 > Les fichiers Python (`ir_distance_node.py`, `shutdown_button_node.py`) doivent être en fin de
-> ligne Unix (LF). Si transférés depuis Windows, corriger après copie :
+> ligne Unix (LF). Un `git clone` direct sur la RPi ne pose pas ce problème ; si tu es passé par
+> une édition/copie Windows entre-temps, corrige avant build :
 > ```bash
-> dos2unix ~/ros2_ws/src/ros2wifibot/scripts/*.py
-> chmod +x ~/ros2_ws/src/ros2wifibot/scripts/*.py
+> dos2unix ~/ros2_ws/src/<ton-depot>/ros2wifibot/scripts/*.py
+> chmod +x ~/ros2_ws/src/<ton-depot>/ros2wifibot/scripts/*.py
 > ```
 
 ## 3. Cloner et compiler `ydlidar_ros2_driver`
@@ -271,6 +278,6 @@ Le portage vers ROS2 (rclcpp, tf2, paramètres, message `Status.msg`) ainsi que 
 
 ## 10. Licence
 
-`libwifibot.h`/`libwifibot.cpp` : LGPL (héritée du paquet ROS1 d'origine).
-Reste du code (portage ROS2, drivers IMU/IR, launch, config) : à définir selon votre choix
-(MIT recommandé pour un usage pédagogique).
+Ce dépôt est sous licence **MIT** (voir [`LICENSE`](LICENSE)), à l'exception de
+`include/ros2wifibot/libwifibot.h` et `src/libwifibot.cpp` qui restent sous **LGPL**, héritée
+du paquet ROS1 d'origine (Jean-Charles Mammana).
