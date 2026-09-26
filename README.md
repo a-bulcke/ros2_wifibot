@@ -155,7 +155,7 @@ ubuntu ALL=(ALL) NOPASSWD: /sbin/shutdown
 ```bash
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
-git clone https://github.com/<ton-compte>/<ton-depot>.git
+git clone https://github.com/a-bulcke/ros2_wifibot.git
 ```
 
 Ça crée `~/ros2_ws/src/<ton-depot>/ros2wifibot` et `.../ybimu_ros2_driver` — `colcon build`
