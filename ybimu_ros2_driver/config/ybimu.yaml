@@ -1,0 +1,7 @@
+ybimu_node:
+  ros__parameters:
+    port: "/dev/myimu"
+    frame_id: "imu_link"
+    publish_period_ms: 40
+    report_rate_hz: 25
+    mount_flip_axis: "z"

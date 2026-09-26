@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://download.ros.org/schema/package_format3.xsd"?>
+<package format="3">
+  <name>ybimu_ros2_driver</name>
+  <version>1.0.0</version>
+  <description>Driver ROS2 pour l'IMU Yahboom ICM-42670-P + QMC5883P (protocole série 0x7E 0x23)</description>
+  <maintainer email="arnaud.bulcke@ac-clermont.fr">Arnaud</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
