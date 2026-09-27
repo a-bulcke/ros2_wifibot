@@ -11,9 +11,9 @@ class IrDistanceNode(Node):
         super().__init__('ir_distance_node')
 
         # Paramètres ajustables
-        self.declare_parameter('left_channel', 1)    # 1 ou 2 (adc1/adc2)
-        self.declare_parameter('right_channel', 3)    # 3 ou 4 (adc3/adc4)
-        self.declare_parameter('voltage_scale', 1.0)  # correction pont diviseur
+        self.declare_parameter('left_channel', 1)    # adc1
+        self.declare_parameter('right_channel', 3)    # adc3
+        self.declare_parameter('voltage_scale', 1.0)  # correction si necessaire
         self.declare_parameter('coeff_a', 65.0)
         self.declare_parameter('coeff_b', -1.10)
         
