@@ -3,8 +3,6 @@
 Portage ROS2 Humble du robot **Wifibot Lab** (originellement RPi2 + ROS1), piloté par une
 **Raspberry Pi 4** sous **Ubuntu 22.04 Server (64 bits)**, sans Docker (installation native).
 
-Utilisé en BTS CIEL pour les TP robotique/ROS2.
-
 ## Matériel
 
 | Élément | Détail |
@@ -111,7 +109,7 @@ sudo reboot
 
 > On reste ici sur le mini-UART (`ttyS0`), pas sur le PL011 complet (`ttyAMA0`) : pas besoin de
 > `dtoverlay=disable-bt` (qui swap l'UART interne du Bluetooth vers les GPIO) — cette manip est
-> nécessaire sur RPi5 mais pas dans cette configuration RPi4.
+> nécessaire sur RPi5 mais pas pour RPi4.
 
 ### 1.4 Règles udev — noms de périphériques stables
 
@@ -158,16 +156,15 @@ cd ~/ros2_ws/src
 git clone https://github.com/a-bulcke/ros2_wifibot.git
 ```
 
-Ça crée `~/ros2_ws/src/<ton-depot>/ros2wifibot` et `.../ybimu_ros2_driver` — `colcon build`
-les trouve automatiquement (recherche récursive des `package.xml`), peu importe ce niveau de
-dossier supplémentaire.
+Ça crée `~/ros2_ws/src/ros2_wifibot/ros2wifibot` et `.../ybimu_ros2_driver` — `colcon build`
+les trouve automatiquement (recherche récursive des `package.xml`).
 
 > Les fichiers Python (`ir_distance_node.py`, `shutdown_button_node.py`) doivent être en fin de
-> ligne Unix (LF). Un `git clone` direct sur la RPi ne pose pas ce problème ; si tu es passé par
-> une édition/copie Windows entre-temps, corrige avant build :
+> ligne Unix (LF). Un `git clone` direct sur la RPi ne pose pas ce problème ; si passage par
+> une édition/copie Windows entre-temps, il faut corriger avant build :
 > ```bash
-> dos2unix ~/ros2_ws/src/<ton-depot>/ros2wifibot/scripts/*.py
-> chmod +x ~/ros2_ws/src/<ton-depot>/ros2wifibot/scripts/*.py
+> dos2unix ~/ros2_ws/src/ros2_wifibot/ros2wifibot/scripts/*.py
+> chmod +x ~/ros2_ws/src/ros2_wifibot/ros2wifibot/scripts/*.py
 > ```
 
 ## 3. Cloner et compiler `ydlidar_ros2_driver`
@@ -274,7 +271,7 @@ journalctl -u wifibot.service -f
 
 Le portage vers ROS2 (rclcpp, tf2, paramètres, message `Status.msg`) ainsi que les paquets
 `ybimu_ros2_driver` et les nodes `ir_distance_node.py`/`shutdown_button_node.py` sont spécifiques
-à cette adaptation pour un usage pédagogique BTS CIEL.
+à cette adaptation pour un usage pédagogique.
 
 ## 10. Licence
 
