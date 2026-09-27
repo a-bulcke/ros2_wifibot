@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Wifibot bringup — robot + YLidar X2 + caméra DSI
+Wifibot bringup — robot wifibot + YLidar X2 + caméra DSI + IMU Yahboom 9DOF + Manette PS4 BT
 """
 import os
 from ament_index_python.packages import get_package_share_directory
