@@ -1,7 +1,7 @@
 # ros2wifibot — Stack ROS2 Humble pour Wifibot Lab (RPi4)
 
-Portage ROS2 Humble du robot **Wifibot Lab** (originellement RPi2 + ROS1), piloté par une
-**Raspberry Pi 4** sous **Ubuntu 22.04 Server (64 bits)**, sans Docker (installation native).
+Portage ROS2 Humble du robot **Wifibot Lab**, piloté par une
+**Raspberry Pi 4** sous **Ubuntu 22.04 Server (64 bits)**.
 
 ## Matériel
 
