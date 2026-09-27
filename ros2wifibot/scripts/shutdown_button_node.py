@@ -9,7 +9,7 @@ class ShutdownButtonNode(Node):
     def __init__(self):
         super().__init__('shutdown_button_node')
 
-        self.declare_parameter('button_index', 8)      # bouton "Connect" par exemple
+        self.declare_parameter('button_index', 8)      # bouton "Connect"
         self.declare_parameter('hold_duration_sec', 3.0)
 
         self.button_index = self.get_parameter('button_index').value
