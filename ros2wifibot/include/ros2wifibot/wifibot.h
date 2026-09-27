@@ -10,7 +10,7 @@
 #include <std_msgs/msg/bool.hpp>
 #include <memory>
 
-// ✅ Include du message custom généré par ROS2
+// Include du message custom généré par ROS2
 #include "ros2wifibot/msg/status.hpp"
 namespace wifibot { class Driver; }
 
@@ -34,7 +34,7 @@ private:
 
   // Publishers
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr         _pubOdometry;
-  rclcpp::Publisher<ros2wifibot::msg::Status>::SharedPtr        _pubStatus;       // ✅ ajouté + bon namespace
+  rclcpp::Publisher<ros2wifibot::msg::Status>::SharedPtr        _pubStatus;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr          _pubRobotBatteryVoltage;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr          _pubComputerBatteryVoltage;
   rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr             _pubIsCharging;
